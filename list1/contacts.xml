@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<contacts>
+    <person>
+        <name>1</name>
+        <email>1</email>
+        <phone>1</phone>
+        <address>1</address>
+        <age>1</age>
+    </person>
+    <person>
+        <name>2</name>
+        <email>2</email>
+        <phone>2</phone>
+        <address>2</address>
+        <age>2</age>
+    </person>
+</contacts>
