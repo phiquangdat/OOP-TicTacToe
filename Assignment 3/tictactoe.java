@@ -1,10 +1,10 @@
-import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.Scanner;
 
-public class TicTacToe {
+public class tictactoe {
     static ArrayList<Integer> playerPositions = new ArrayList<>();
     static ArrayList<Integer> cpuPositions = new ArrayList<>();
 
@@ -24,7 +24,6 @@ public class TicTacToe {
                 System.out.println("Enter your placement (1-9): ");
                 int pos = scanner.nextInt();
 
-                // Ensure the position is not taken and is valid
                 while (playerPositions.contains(pos) || cpuPositions.contains(pos) || pos < 1 || pos > 9) {
                     System.out.println("Position taken! Enter a correct position.");
                     pos = scanner.nextInt();
@@ -38,10 +37,9 @@ public class TicTacToe {
                     System.out.println(result);
                     break;
                 }
-
-                // CPU turn
+               
                 Random rand = new Random();
-                int cpuPos = rand.nextInt(9) + 1; // Generates positions between 1-9
+                int cpuPos = rand.nextInt(9) + 1; 
                 while (playerPositions.contains(cpuPos) || cpuPositions.contains(cpuPos)) {
                     cpuPos = rand.nextInt(9) + 1;
                 }
@@ -56,7 +54,6 @@ public class TicTacToe {
                     break;
                 }
 
-                // Check for draw
                 if (playerPositions.size() + cpuPositions.size() == 9) {
                     System.out.println("It's a draw!");
                     break;
@@ -109,9 +106,9 @@ public class TicTacToe {
 
         for (List<Integer> l : winning) {
             if (playerPositions.containsAll(l)) {
-                return "Congratulations, you won!";
+                return "You won!";
             } else if (cpuPositions.containsAll(l)) {
-                return "CPU wins! Better luck next time.";
+                return "CPU wins!";
             }
         }
 
