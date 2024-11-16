@@ -1,0 +1,5 @@
+Player choose the symbol to use
+Computer will decide player or computer plays first 
+Player takes turn with computer to place the symbols
+Computer will check for win or draw after each turn
+Computer will announce the winner or draw
