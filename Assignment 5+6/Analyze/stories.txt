@@ -1,5 +1,21 @@
-Player choose the symbol to use
-Computer will decide player or computer plays first 
-Player takes turn with computer to place the symbols
-Computer will check for win or draw after each turn
-Computer will announce the winner or draw
+Actors: 
+Player: User can choose symbol, place the symbol and can win the game
+Computer: User is assigned a symbol, can place the symbol and win the game.
+System: Manages the operation of the game, decides who is the winner
+
+Cases and Scenarios:
+1. Player chooses symbol:
+Actor: Player
+Scenario: Player decides which symbol to use (X or O)
+Use Case: Scanner in the Main class
+
+2. Start the Game 
+Actor: Player, Computer, System
+Scenario: Player and Computer alternatively choose postions on the board, System ensures the symbol is placed in the correct postion
+Use Case: startGame() in the Game class
+
+3. Announce the Result
+Actor: System
+Scenario: System will check the Board after every turn to see if there is a winner or a draw
+Use Case: checkWinner() in the Game class
+

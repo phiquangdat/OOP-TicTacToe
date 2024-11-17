@@ -14,9 +14,9 @@ class Game {
 
     // Check three given positions on the board contain the same non-empty symbol
     private boolean checkLine(int r1, int c1, int r2, int c2, int r3, int c3) {
-        return Board.boardSymbols[r1][c1] != ' ' &&
-               Board.boardSymbols[r1][c1] == Board.boardSymbols[r2][c2] &&
-               Board.boardSymbols[r2][c2] == Board.boardSymbols[r3][c3];
+        return board.boardSymbols[r1][c1] != ' ' &&
+               board.boardSymbols[r1][c1] == board.boardSymbols[r2][c2] &&
+               board.boardSymbols[r2][c2] == board.boardSymbols[r3][c3];
     }
 
     // Check Game Condition
@@ -36,7 +36,7 @@ class Game {
 
         // Check if the board is full -> DRAW
         boolean boardFull = true;
-        for (char[] row : Board.boardSymbols) {
+        for (char[] row : board.boardSymbols) {
             for (char cell : row) {
                 if (cell == ' ') {
                     boardFull = false;
@@ -58,9 +58,9 @@ class Game {
         while (true) {
             board.printBoard();
             if (isPlayerTurn) 
-                player.movePlayer();
+                player.movePlayer(board);
             else
-                computer.moveComputer();
+                computer.moveComputer(board);
             if (!checkCondition().equals("")) 
                 {
                     board.printBoard();

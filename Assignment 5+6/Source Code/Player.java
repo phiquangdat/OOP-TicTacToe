@@ -14,17 +14,17 @@ class Player {
         this.playerSymbol = symbol;
     }
     
-    public void movePlayer(){
+    public void movePlayer(Board board){
         Scanner sc = new Scanner(System.in);
         int pos;
         while(true){
             System.out.println("Enter your position (1-9): ");
             pos = sc.nextInt();
-            if(Board.isValidMove(pos))
+            if(board.isValidMove(pos))
                 break;
             else
                 System.out.println("Invalid move, try again!");
         }
-        Board.placeMove(pos, playerSymbol);
+        board.placeMove(pos, playerSymbol);
     }
 }
