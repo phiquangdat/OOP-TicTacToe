@@ -11,7 +11,6 @@ class Game {
         this.computer = new Computer((playerSymbol == 'X') ? 'O' : 'X');
         this.isPlayerTurn = new Random().nextBoolean();
     }
-
     // Check three given positions on the board contain the same non-empty symbol
     private boolean checkLine(int r1, int c1, int r2, int c2, int r3, int c3) {
         return board.boardSymbols[r1][c1] != ' ' &&
@@ -22,7 +21,7 @@ class Game {
     // Check Game Condition
     public String checkCondition() {
         // Check for winning conditions
-        if (checkLine(0, 0, 0, 2, 0, 4) || // Top row
+        if (checkLine(0, 0, 0, 2, 0, 4) || // Top row X X X
             checkLine(2, 0, 2, 2, 2, 4) || // Middle row
             checkLine(4, 0, 4, 2, 4, 4) || // Bottom row
             checkLine(0, 0, 2, 0, 4, 0) || // Left column
@@ -58,9 +57,9 @@ class Game {
         while (true) {
             board.printBoard();
             if (isPlayerTurn) 
-                player.movePlayer(board);
+                player.move(board);
             else
-                computer.moveComputer(board);
+                computer.move(board);
             if (!checkCondition().equals("")) 
                 {
                     board.printBoard();
