@@ -1,13 +1,13 @@
 import java.util.Random;
 class Game {
     private final Board board;
-    private final Player player;
-    private final Computer computer;
+    private final Players human;
+    private final Players computer;
     private boolean isPlayerTurn;
 
     public Game(char playerSymbol){
         this.board = new Board();
-        this.player = new Player(playerSymbol);
+        this.human = new Human(playerSymbol);
         this.computer = new Computer((playerSymbol == 'X') ? 'O' : 'X');
         this.isPlayerTurn = new Random().nextBoolean();
     }
@@ -57,10 +57,10 @@ class Game {
         while (true) {
             board.printBoard();
             if (isPlayerTurn) 
-                player.move(board);
+                human.move(board);
             else
                 computer.move(board);
-            if (!checkCondition().equals("")) 
+            if (!checkCondition().isEmpty())
                 {
                     board.printBoard();
                     System.out.println(checkCondition());

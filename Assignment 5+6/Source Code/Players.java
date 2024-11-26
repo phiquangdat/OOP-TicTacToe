@@ -11,15 +11,11 @@ abstract class Players {
         return this.symbol;
     }
 
-    public void setSymbol(char symbol) {
-        this.symbol = symbol;
-    }
-
     public abstract void move(Board board);
 }
 
-class Player extends Players {
-    public Player(char symbol) {
+class Human extends Players {
+    public Human(char symbol) {
         super(symbol);
     }
 
