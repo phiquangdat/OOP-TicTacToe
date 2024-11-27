@@ -35,6 +35,6 @@ public abstract class LibraryItem {
        this.isAvailable = true;
        this.dueToDate = null;
     }
-    
+    public abstract String showInfo();
     public abstract void borrowItem();
 }

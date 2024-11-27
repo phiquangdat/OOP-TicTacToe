@@ -18,7 +18,11 @@ public class Book extends LibraryItem{
     public String getTitle(){
         return this.title;
     }
-    
+
+    @Override
+    public String showInfo(){
+        return this.getId() + ": Book - " + this.getTitle() + (this.isAvailable ? " (Available)" : " (Borrowed)");
+    }
     
     @Override
     public void borrowItem(){

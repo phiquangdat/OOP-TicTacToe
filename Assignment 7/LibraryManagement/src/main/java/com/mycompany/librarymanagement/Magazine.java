@@ -19,7 +19,12 @@ public class Magazine extends LibraryItem {
     public String getIssue(){
         return this.issue;
     }
-    
+
+    @Override
+    public String showInfo(){
+        return this.getId() + ": Magazine - " + this.getIssue() + (this.isAvailable ? " (Available)" : " (Borrowed)");
+    }
+
     @Override
     public void borrowItem(){
          this.isAvailable = false;

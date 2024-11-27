@@ -12,15 +12,12 @@ import java.util.List;
  * @author phiquangdat
  */
 public class LibraryManagement {
-    private List<LibraryItem> libraryItems;
+    private final List<LibraryItem> libraryItems;
 
     public LibraryManagement() {
         libraryItems = new ArrayList<>();
         addLibraryItem(new Book("book001", "Introduction to Java"));
         addLibraryItem(new Magazine("magazine001", "New York Times"));
-
-        //
-        this.GUI();
     }
 
     public void addLibraryItem(LibraryItem item) {
@@ -72,13 +69,7 @@ public class LibraryManagement {
     private void refreshList(DefaultListModel<String> listModel) {
     listModel.clear();
     for (LibraryItem item : libraryItems) {
-        String type = (item instanceof Book) ? "Book" : "Magazine";
-        String details = (item instanceof Book) 
-                            ? ((Book) item).getTitle() 
-                            : ((Magazine) item).getIssue();
-        String status = item.isAvailable() ? " (Available)" : " (Borrowed)";
-        
-        listModel.addElement(item.getId() + ": " + type + " - " + details + status);
+        listModel.addElement(item.showInfo());
     }
 
 
@@ -165,6 +156,7 @@ public class LibraryManagement {
     }
 
     public static void main(String[] args) {
-        new LibraryManagement();
+        LibraryManagement lr = new LibraryManagement();
+        lr.GUI();
     }
 }
