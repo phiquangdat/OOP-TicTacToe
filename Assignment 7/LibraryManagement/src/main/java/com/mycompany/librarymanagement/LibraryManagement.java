@@ -37,6 +37,8 @@ public class LibraryManagement {
         JList<String> itemList = new JList<>(listModel);
         refreshList(listModel);
         
+        
+        
         JLabel label = new JLabel("List of Library Items: ");
         label.setBounds(50,50, 150,20);  
         
